@@ -32,10 +32,7 @@ ALLOWED_HOSTS = ['red-white-notice-app.herokuapp.com']
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
-    'django.contrib.staticfiles',
     "admin_interface",
-
-
     "colorfield",
     'django.contrib.admin',
     'django.contrib.auth',
