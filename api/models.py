@@ -7,7 +7,7 @@ class Event(Model):
     holiday = models.BooleanField(default=False)
     image = models.URLField(blank=True)
     msg = models.TextField(max_length=5000)
-    scheduled_at = models.DateTimeField()
+    scheduled_at = models.DateField()
 
     def __str__(self):
         return self.msg

@@ -12,12 +12,9 @@ from .serializers import EventSerializer, QuoteSerializer
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def load_current_event(request):
-    today = datetime.now().date()
-    tomorrow = today + timedelta(1)
-    today_start = datetime.combine(today, time())
-    today_end = datetime.combine(tomorrow, time())
 
-    event = Event.objects.filter(scheduled_at__lte=today_end, scheduled_at__gte=today_start).first()
+    today = datetime.now().date()
+    event = Event.objects.filter(scheduled_at=today).first()
     data = EventSerializer(event).data
     return Response(data)
 
